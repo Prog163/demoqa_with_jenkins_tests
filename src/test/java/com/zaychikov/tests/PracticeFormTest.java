@@ -20,7 +20,6 @@ public class PracticeFormTest extends TestBase {
         step("Open page: https://demoqa.com/automation-practice-form", () -> {
             registrationPage.openPage();
         });
-
         step("Type firstname", () -> {
             registrationPage.typeFirstName(firstName);
         });
