@@ -20,6 +20,6 @@ public class TestData {
             userSubjects = "Computer Science",
             userHobbies = "Sports",
             userCity = faker.address().streetAddress(),
-            userState = "Haryana",
-            userCityOfState = "Panipat";
+            userState = "NCR",
+            userCityOfState = "Delhi";
 }

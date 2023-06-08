@@ -61,7 +61,7 @@ public class RegistrationPage {
 
     public void typeState(String userState) {
         stateSelector.scrollTo().click();
-        stateInput.$(byText("Haryana")).click();
+        stateInput.$(byText("NCR")).click();
     }
 
     public void typeCityOfState(String value) {
