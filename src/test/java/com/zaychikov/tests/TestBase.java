@@ -23,8 +23,6 @@ public class TestBase {
 
     @AfterEach
     public void afterEach() {
-        //Оставляю браузер открытым для проверки введённых значений, т.к. он закрывается автоматически
-        Configuration.holdBrowserOpen = true;
         Attachments.screenshotAs("Last screenshot");
         Attachments.pageSource();
         Attachments.browserConsoleLogs();
