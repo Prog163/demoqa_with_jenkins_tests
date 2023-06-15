@@ -20,7 +20,7 @@ public class PracticeFormTest extends TestBase {
 
     @Description(value = "Проверка заполнения данных студента для: https://demoqa.com/automation-practice-form")
     @Feature(value = "automation-practice-form")
-    @Story(value = "Заполнение и проверка данных формы студента: automation-practice-form")
+    @Story(value = "Заполненить и проверить данные формы студента: automation-practice-form")
     @DisplayName("Проверка заполнения данных студента")
     @Test
     void practiceFormTest() {
