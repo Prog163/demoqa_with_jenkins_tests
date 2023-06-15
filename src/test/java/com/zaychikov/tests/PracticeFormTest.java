@@ -5,6 +5,7 @@ import com.zaychikov.pages.RegistrationPage;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -18,8 +19,9 @@ public class PracticeFormTest extends TestBase {
     Calendar calendar = new Calendar();
 
     @Description(value = "Проверка заполнения данных студента для: https://demoqa.com/automation-practice-form")
-    @Feature(value = "Проверка заполнения данных студента")
-    @Story(value = "Заполнение и проверка данных: automation-practice-form")
+    @Feature(value = "automation-practice-form")
+    @Story(value = "Заполнение и проверка данных формы студента: automation-practice-form")
+    @DisplayName("Проверка заполнения данных студента")
     @Test
     void practiceFormTest() {
         registrationPage.openPage();
