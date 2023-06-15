@@ -1,4 +1,4 @@
-package com.zaychikov.pages;
+package com.zaychikov.helpers;
 
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;
