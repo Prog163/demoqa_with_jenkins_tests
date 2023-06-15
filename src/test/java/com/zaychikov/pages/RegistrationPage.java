@@ -1,6 +1,7 @@
 package com.zaychikov.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -23,10 +24,12 @@ public class RegistrationPage {
             cityOfStateInput = $("#react-select-4-input"),
             closeModalWindowSelector = $("#closeLargeModal");
 
+    @Step("Открыть сайт: https://demoqa.com/automation-practice-form")
     public void openPage() {
         open("/automation-practice-form");
     }
 
+    @Step("Заполнить: Firstname, Lastname")
     public void typeFirstName(String value) {
         firstNameInput.setValue(value);
     }
@@ -35,6 +38,7 @@ public class RegistrationPage {
         lastNameInput.setValue(value);
     }
 
+    @Step("Заполнить контактные данные")
     public void typeUserEmail(String value) {
         emailInput.setValue(value);
     }
@@ -43,18 +47,22 @@ public class RegistrationPage {
         mobileNumberInput.setValue(value);
     }
 
+    @Step("Выбрать гендер")
     public void typeGender(String userGender) {
         genderInput.$(byText("Male")).click();
     }
 
+    @Step("Выбрать предмет")
     public void typeSubjects(String value) {
         subjectInput.setValue(value).pressEnter();
     }
 
+    @Step("Выбрать хобби")
     public void typeHobbies(String userHobbies) {
         hobbiesInput.$(byText("Sports")).click();
     }
 
+    @Step("Заполнить данные по локации")
     public void typeUserCity(String value) {
         userCityInput.setValue(value);
     }
@@ -69,6 +77,7 @@ public class RegistrationPage {
         cityOfStateInput.setValue(value).pressEnter().pressEnter();
     }
 
+    @Step("Закрыть модальное окно результатов")
     public void closeModalWindow() {
         closeModalWindowSelector.click();
     }
