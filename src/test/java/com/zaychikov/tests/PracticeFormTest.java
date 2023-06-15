@@ -3,6 +3,8 @@ package com.zaychikov.tests;
 import com.zaychikov.pages.Calendar;
 import com.zaychikov.pages.RegistrationPage;
 import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -15,8 +17,10 @@ public class PracticeFormTest extends TestBase {
     RegistrationPage closeModalWindowButton = new RegistrationPage();
     Calendar calendar = new Calendar();
 
+    @Description(value = "Проверка заполнения данных студента для: https://demoqa.com/automation-practice-form")
+    @Feature(value = "Проверка заполнения данных студента")
+    @Story(value = "Заполнение данных")
     @Test
-    @Description(value = "Проверка заполнения данных студента")
     void practiceFormTest() {
         registrationPage.openPage();
         registrationPage.typeFirstName(firstName);
@@ -30,20 +34,30 @@ public class PracticeFormTest extends TestBase {
         registrationPage.typeUserCity(userCity);
         registrationPage.typeState(userState);
         registrationPage.typeCityOfState(userCityOfState);
+    }
 
-        //Проверяем правильность заполнения
-            $(".table-responsive").shouldHave(
-                    text(firstName + " " + lastName),
-                    text(userEmail),
-                    text(userGender),
-                    text(userNumber),
-                    text("07 October,1991"),
-                    text(userSubjects),
-                    text(userHobbies),
-                    text(userCity),
-                    text(userState + " " + userCityOfState));
+    @Description(value = "Проверка заполнения данных студента для: https://demoqa.com/automation-practice-form")
+    @Feature(value = "Проверка заполнения данных студента")
+    @Story(value = "Проверка данных введённых в форму")
+    @Test
+    void checkResultsForm() {
+        $(".table-responsive").shouldHave(
+                text(firstName + " " + lastName),
+                text(userEmail),
+                text(userGender),
+                text(userNumber),
+                text("07 October,1991"),
+                text(userSubjects),
+                text(userHobbies),
+                text(userCity),
+                text(userState + " " + userCityOfState));
+    }
 
-        //Закрываем модальное окно с результатами заполнения после сверки
+    @Description(value = "Проверка заполнения данных студента для: https://demoqa.com/automation-practice-form")
+    @Feature(value = "Проверка заполнения данных студента")
+    @Story(value = "Закрытие модального окна формы")
+    @Test
+    void closeModalWindow() {
         closeModalWindowButton.closeModalWindow();
     }
 }
