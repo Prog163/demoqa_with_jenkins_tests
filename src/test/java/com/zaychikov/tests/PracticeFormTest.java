@@ -19,7 +19,7 @@ public class PracticeFormTest extends TestBase {
 
     @Description(value = "Проверка заполнения данных студента для: https://demoqa.com/automation-practice-form")
     @Feature(value = "Проверка заполнения данных студента")
-    @Story(value = "Заполнение данных")
+    @Story(value = "Заполнение и проверка данных: automation-practice-form")
     @Test
     void practiceFormTest() {
         registrationPage.openPage();
@@ -34,13 +34,7 @@ public class PracticeFormTest extends TestBase {
         registrationPage.typeUserCity(userCity);
         registrationPage.typeState(userState);
         registrationPage.typeCityOfState(userCityOfState);
-    }
 
-    @Description(value = "Проверка заполнения данных студента для: https://demoqa.com/automation-practice-form")
-    @Feature(value = "Проверка заполнения данных студента")
-    @Story(value = "Проверка данных введённых в форму")
-    @Test
-    void checkResultsForm() {
         $(".table-responsive").shouldHave(
                 text(firstName + " " + lastName),
                 text(userEmail),
@@ -51,13 +45,7 @@ public class PracticeFormTest extends TestBase {
                 text(userHobbies),
                 text(userCity),
                 text(userState + " " + userCityOfState));
-    }
 
-    @Description(value = "Проверка заполнения данных студента для: https://demoqa.com/automation-practice-form")
-    @Feature(value = "Проверка заполнения данных студента")
-    @Story(value = "Закрытие модального окна формы")
-    @Test
-    void closeModalWindow() {
         closeModalWindowButton.closeModalWindow();
     }
 }
