@@ -29,20 +29,22 @@ public class RegistrationPage {
         open("/automation-practice-form");
     }
 
-    @Step("Заполнить: Firstname, Lastname")
+    @Step("Заполнить Имя")
     public void typeFirstName(String value) {
         firstNameInput.setValue(value);
     }
 
+    @Step("Заполнить Фамилию")
     public void typeLastName(String value) {
         lastNameInput.setValue(value);
     }
 
-    @Step("Заполнить контактные данные")
+    @Step("Заполнить почту")
     public void typeUserEmail(String value) {
         emailInput.setValue(value);
     }
 
+    @Step("Заполнить телефон")
     public void typeMobileNumber(String value) {
         mobileNumberInput.setValue(value);
     }
@@ -62,16 +64,18 @@ public class RegistrationPage {
         hobbiesInput.$(byText("Sports")).click();
     }
 
-    @Step("Заполнить данные по локации")
+    @Step("Заполнить улицу, дом")
     public void typeUserCity(String value) {
         userCityInput.setValue(value);
     }
 
+    @Step("Заполнить Штат")
     public void typeState(String userState) {
         stateSelector.scrollTo().click();
         stateInput.$(byText("NCR")).click();
     }
 
+    @Step("Заполнить Город")
     public void typeCityOfState(String value) {
         citySelector.click();
         cityOfStateInput.setValue(value).pressEnter().pressEnter();
