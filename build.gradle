@@ -57,6 +57,12 @@ task properties_tests(type: Test) {
     }
 }
 
+task practice_form_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("practiceFormTest")
+    }
+}
+
 task many_tags_tests(type: Test) {
     useJUnitPlatform {
         includeTags "properties"

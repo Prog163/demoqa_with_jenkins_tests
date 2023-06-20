@@ -6,6 +6,7 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -23,6 +24,7 @@ public class PracticeFormTest extends TestBase {
     @Story(value = "Заполнить и проверить форму с данными студента")
     @DisplayName("Проверка заполнения данных студента")
     @Test
+    @Tag("practiceFormTest")
     void practiceFormTest() {
         registrationPage.openPage();
         registrationPage.typeFirstName(firstName);
