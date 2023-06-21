@@ -1,9 +1,9 @@
 {
   "base": {
-    "project": "Telegram reports from Allure",
+    "project": "${JOB_BASE_NAME}",
     "environment": "environment",
     "comment": "Test report",
-    "reportLink": "",
+    "reportLink": "${BUILD_URL}",
     "language": "en",
     "messenger": "telegram",
     "allureFolder": "build/allure-report/",
